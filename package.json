@@ -1,0 +1,27 @@
+{
+  "name": "pruno-livereload",
+  "version": "1.0.0",
+  "description": "A simple livereload package for use with pruno and non-pruno-http servers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdebotton/pruno-livereload.git"
+  },
+  "keywords": [
+    "livereload",
+    "pruno",
+    "gulp"
+  ],
+  "author": "Christian de Botton <debotton@brooklynunited.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdebotton/pruno-livereload/issues"
+  },
+  "homepage": "https://github.com/cdebotton/pruno-livereload",
+  "dependencies": {
+    "gulp-livereload": "^3.8.0"
+  }
+}
