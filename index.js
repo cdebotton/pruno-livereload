@@ -17,7 +17,7 @@ LiveReloadTask.getDefaults = function() {
     search: [
       "::dist/**/*",
       "./api/**/*",
-      "::src/webpack-stats.json"
+      "::src/**/webpack-stats.json"
     ]
   };
 };
