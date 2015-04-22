@@ -1,6 +1,7 @@
 "use strict";
 
-var livereload = require("gulp-livereload");
+var livereload = require("tiny-lr")();
+var watch = require("gulp-watch");
 
 function LiveReloadTask(params) {
   params || (params = {});
@@ -8,18 +9,26 @@ function LiveReloadTask(params) {
   this.params = params;
 };
 
-LiveReloadTask.name = "LiveReloadTask";
+LiveReloadTask.displayName = "LiveReloadTask";
+
 LiveReloadTask.getDefaults = function() {
-  return { search: ["::dist/**/*", "./api/**/*"] };
+  return {
+    lrPort: 35729,
+    search: [
+      "::dist/**/*",
+      "./api/**/*",
+      "::src/webpack-stats.json"
+    ]
+  };
 };
 
 LiveReloadTask.prototype.generateWatcher = function(gulp, params) {
-  livereload.listen();
-
   return function() {
-    gulp.watch(params.search, function(files) {
-      gulp.src(files)
-        .pipe(livereload());
+    livereload.listen(params.lrPort);
+
+    watch(params.search, function(event) {
+      var fileName = path.relative(__dirname, event.path);
+      livereload.changed({ body: { files: [fileName] } });
     });
   };
 };
