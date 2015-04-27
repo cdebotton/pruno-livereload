@@ -25,8 +25,5 @@
     "gulp-livereload": "^3.8.0",
     "gulp-watch": "^4.2.4",
     "tiny-lr": "^0.1.5"
-  },
-  "peerDependencies": {
-    "tiny-lr": "^0.1.5"
   }
 }
