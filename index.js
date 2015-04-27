@@ -1,5 +1,6 @@
 "use strict";
 
+var path = require("path");
 var livereload = require("tiny-lr")();
 var watch = require("gulp-watch");
 
